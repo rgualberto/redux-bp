@@ -1,0 +1,9 @@
+{
+  "name": "redux-bp",
+  "version": "1.0.0",
+  "description": "Super stripped down boilerplate for redux apps",
+  "main": "index.js",
+  "repository": "https://github.com/rgualberto/redux-bp",
+  "author": "Rodrigo Gualberto <itzdrigz@gmail.com>",
+  "license": "MIT"
+}
