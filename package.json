@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/rgualberto/redux-bp",
   "author": "Rodrigo Gualberto <itzdrigz@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.2.1"
+  }
 }
