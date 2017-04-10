@@ -52,15 +52,14 @@
     "no-unused-vars" : 2,
     "no-var" : 1,
     "operator-linebreak" : 1,
-    "quotes" : 2,
+    "quotes" : 0,
     "react/jsx-boolean-value" : [1, "always"],
     "react/jsx-closing-bracket-location" : 1,
-    "react/jsx-curly-spacing" : [1, "always"],
+    "react/jsx-curly-spacing" : [1, "never"],
     "react/jsx-key" : 2,
     "react/jsx-no-duplicate-props" : 2,
     "react/jsx-no-undef" : 1,
     "react/jsx-pascal-case" : 1,
-    "react/jsx-sort-prop-types" : 1,
     "react/jsx-uses-react" : 1,
     "react/jsx-uses-vars" : 1,
     "react/no-danger" : 0,
@@ -75,7 +74,11 @@
     "react/react-in-jsx-scope" : 1,
     "react/self-closing-comp" : 1,
     "react/sort-comp" : 1,
+    "react/sort-prop-types" : 1,
     "react/wrap-multilines" : 1,
     "semi" : [1, "always"]
+  },
+  "globals": {
+    "React": true
   }
 }
