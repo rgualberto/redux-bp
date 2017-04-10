@@ -1,22 +1,26 @@
+import './bp.scss';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class BpComponent extends Component {
   render() {
     const {
-      headingTitle
+      headingTitle,
+      subHeading
     } = this.props;
 
     return (
-      <div className="container">
-        <h1>{headingTitle}</h1>
+      <div className="bp">
+        <h1 className="bp__heading">{headingTitle}</h1>
+        <p className="bp__subheading">{subHeading}</p>
       </div>
     );
   }
 }
 
 BpComponent.propTypes = {
-  headingTitle: PropTypes.string
+  headingTitle: PropTypes.string,
+  subHeading: PropTypes.string
 };
 
 export default BpComponent;

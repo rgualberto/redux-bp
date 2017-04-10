@@ -32,7 +32,12 @@ module.exports = () => {
 
     module: {
       rules: [
-        {test: /\.jsx?$/, exclude: nodeModules, use: ['babel-loader']}
+        {test: /\.jsx?$/, exclude: nodeModules, use: ['babel-loader']},
+        {test: /\.scss$/, use: [
+          "style-loader",
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } }
+        ]},
       ]
     }
   };
