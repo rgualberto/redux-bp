@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {toggleText} from './bpReducer';
 
-class BpComponent extends Component {
+export class BpComponent extends Component {
   toggle() {
     this.props.toggleText();
   }

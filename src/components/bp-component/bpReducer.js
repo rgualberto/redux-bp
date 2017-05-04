@@ -1,6 +1,6 @@
-const TOGGLE_TEXT = 'TOGGLE_TEXT';
+export const TOGGLE_TEXT = 'TOGGLE_TEXT';
 
-const initialState = {
+export const initialState = {
   toggleState: true
 };
 
