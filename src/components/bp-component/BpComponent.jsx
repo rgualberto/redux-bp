@@ -1,8 +1,9 @@
 import './bp.scss';
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 import {toggleText} from './bpReducer';
+import {request} from '../../helpers/loader/loader';
 
 const BpComponent = props => {
   const {
@@ -19,6 +20,19 @@ const BpComponent = props => {
   );
   const toggleState = useSelector(state => state.bpReducer.toggleState);
   const title = toggleState ? headingTitle : titleToggleText;
+
+  // fetch data
+  useEffect(() => {
+    request({
+      url: "url goes here",
+      postLoad: (results) => {
+
+        if (results.isAxiosError) { // can be an error but not this
+          console.log(results.message);
+        }
+      }
+    })
+  }, []);
 
   return (
     <div className="bp">
