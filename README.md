@@ -2,6 +2,13 @@
 
 A stripped down boilerplate for React/Redux apps
 
+## Todo
+
+- fix/update webpack config
+- add loader
+- fix jest tests
+- enhance webpack boilerplate with settings for compression (terser/gzip)
+
 ## Installation
 
 Using npm:
