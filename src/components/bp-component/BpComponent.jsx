@@ -1,38 +1,37 @@
 import './bp.scss';
-import React, {Component} from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {toggleText} from './bpReducer';
 
-export class BpComponent extends Component {
-  toggle() {
-    this.props.toggleText();
-  }
+const BpComponent = props => {
+  const {
+    buttonText,
+    headingTitle,
+    subHeading,
+    titleToggleText
+  } = props;
 
-  render() {
-    const {
-      buttonText,
-      headingTitle,
-      subHeading,
-      titleToggleText,
-      toggleState
-    } = this.props;
-    const title = toggleState ? headingTitle : titleToggleText;
+  const dispatch = useDispatch();
+  const toggle = useCallback(
+    () => dispatch(toggleText()),
+    [dispatch]
+  );
+  const toggleState = useSelector(state => state.bpReducer.toggleState);
+  const title = toggleState ? headingTitle : titleToggleText;
 
-    return (
-      <div className="bp">
-        <h1 className="bp__heading">{title}</h1>
-        <p className="bp__subheading">{subHeading}</p>
-        <button
-          className="bp__text-toggle"
-          onClick={this.toggle.bind(this)}
-        >
-          {buttonText}
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div className="bp">
+      <h1 className="bp__heading">{title}</h1>
+      <p className="bp__subheading">{subHeading}</p>
+      <button
+        className="bp__text-toggle"
+        onClick={toggle}
+      >
+        {buttonText}
+      </button>
+    </div>
+  );
 }
 
 BpComponent.propTypes = {
@@ -44,19 +43,4 @@ BpComponent.propTypes = {
   toggleText: PropTypes.func
 };
 
-function mapStateToProps(state) {
-  return {
-    toggleState: state.bpReducer.toggleState
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    toggleText: bindActionCreators(toggleText, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BpComponent);
+export default BpComponent;
